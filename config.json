@@ -1,0 +1,78 @@
+{
+	"$schema": "https://raw.githubusercontent.com/Bedrock-OSS/regolith-schemas/main/config/v1.4.json",
+	"author": "xmas",
+	"name": "above_us",
+	// "experimentalGameplay": {
+  //   "betaAPIs"               : true,
+  //   "upcomingCreatorFeatures": true
+  // },
+	"namespace": "x",
+  "worlds": [
+  ],
+	"packs": {
+		"behaviorPack": "./packs/BP",
+		"resourcePack": "./packs/RP"
+	},
+	"packDefinitions": {
+		"families"            : {"include":["x:*"]},
+		"tags"                : {"include":["x.*"]},
+		"scoreboardObjectives": {"include":["x.*"]}
+	},
+	"regolith": {
+		"dataPath": "./packs/data",
+		"filterDefinitions": {
+			"name_ninja"       : { "url": "github.com/XmasIRL/regolith-filters"                , "version": "HEAD" },
+			"texture_list"     : { "url": "github.com/XmasIRL/regolith-filters"                , "version": "HEAD" },
+			"link_manifests"   : { "url": "github.com/XmasIRL/regolith-filters-hatchibombotar" , "version": "HEAD" },
+			"pack_commons"     : { "url": "github.com/XmasIRL/regolith-filters-hatchibombotar" , "version": "HEAD" },
+			"molang_insert"    : { "url": "github.com/XmasIRL/regolith-filters-hatchibombotar" , "version": "HEAD" },
+			"package"          : { "url": "github.com/XmasIRL/regolith-filters-hatchibombotar" , "version": "HEAD" },
+			"esbuild_executor" : { "url": "github.com/XmasIRL/regolith-filters-majestikbutter" , "version": "HEAD" }
+		},
+		"formatVersion": "1.4.0",
+		"profiles": {
+			"default": {
+				"export" : { "build": "standard", "readOnly": false, "target": "development" },
+				"filters": [
+          {"filter": "pack_commons"},
+          {"filter": "link_manifests"},
+          {"filter": "texture_list"},
+          {"filter": "molang_insert"},
+          {"filter": "esbuild_executor", "settings": {
+            "removeGlob": "**/scripts/ts/**",
+            "buildOptions":{
+              "external"   : ["@minecraft/server", "@minecraft/server-ui"],
+              "entryPoints": ["BP/scripts/ts/src/index.ts"],
+              "outfile"    : "BP/scripts/index.js",
+              "target"     : "es2021",
+              "format"     : "esm",
+              "bundle"     : true,
+              "minify"     : true
+            }
+          }},
+          {
+            "filter": "name_ninja", "settings": {
+              "languages" : ["en_US.lang"], "overwrite": false, "sort": false,
+              "entities"  : {"auto_name": true, "prefix":"§g", "postfix":"§r"},
+              "blocks"    : {"auto_name": true, "prefix":"§g", "postfix":"§r"},
+              "items"     : {"auto_name": true, "prefix":"§g", "postfix":"§r"},
+              "spawn_eggs": {"auto_name": true, "prefix":"§g", "postfix":"§r"}
+          }}
+        ]
+			},
+			"build": {
+				"export" : { "build": "standard", "readOnly": false, "target": "local" },
+				"filters": [
+          {"profile": "default"},
+          {"filter": "package", "settings":{
+            "package_location": "./build/package",
+            "package": {
+              "mcaddon":{},
+              "mcpack": {}
+            }
+          }}
+        ]
+			}
+		}
+	}
+}

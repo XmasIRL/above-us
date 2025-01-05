@@ -1,0 +1,11 @@
+
+# .gitignore:
+# *     : Matches files/folders at the current level.
+# **    : Matches everything recursively (files/folders).
+# **/   : Matches directories recursively.
+# *.ext : Matches files with the given extension.
+# !     : Negates a pattern (use with caution).
+
+/build/**
+/local/**
+/.regolith

@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "name": "above_us_scripts",
+  "author": "xmas",
+  "license": "Unlicense",
+  "description": "A party game for Minecraft where you play as stars ruling over a village. Features social deduction, combat and puzzle-solving gameplay for two or more players.",
+  "keywords": [
+    "minecraft",
+    "minecraft-bedrock",
+    "minecraft-addon"
+  ],
+  "dependencies": {
+    "@minecraft/server": "*",
+    "@minecraft/server-ui": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}
