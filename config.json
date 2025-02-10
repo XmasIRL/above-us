@@ -21,6 +21,7 @@
 	"regolith": {
 		"dataPath": "./packs/data",
 		"filterDefinitions": {
+			"exaroton_deploy"  : { "url": "github.com/XmasIRL/regolith-filters-xmas"           , "version": "HEAD" },
 			"name_ninja"       : { "url": "github.com/XmasIRL/regolith-filters"                , "version": "HEAD" },
 			"texture_list"     : { "url": "github.com/XmasIRL/regolith-filters"                , "version": "HEAD" },
 			"link_manifests"   : { "url": "github.com/XmasIRL/regolith-filters-hatchibombotar" , "version": "HEAD" },
@@ -65,11 +66,22 @@
 				"filters": [
           {"profile": "default"},
           {"filter": "package", "settings":{
-            "package_location": "./build/package",
-            "package": {
-              "mcaddon":{},
-              "mcpack": {}
-            }
+            "package_location": "./build/package/packs",
+            "package": { "mcpack": {} }
+          }},
+          {"filter": "package", "settings":{
+            "package_location": "./build/package/addon",
+            "package": { "mcaddon":{} }
+          }}
+        ]
+			},
+			"deploy": {
+				"export" : { "build": "standard", "readOnly": false, "target": "local" },
+				"filters": [
+          {"profile": "build"},
+          {"filter": "exaroton_deploy", "settings":{
+            "packsPath": "build/package/packs",
+            "keepExistingPacks": true
           }}
         ]
 			}
