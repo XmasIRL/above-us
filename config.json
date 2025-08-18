@@ -37,28 +37,28 @@
 				"filters": [
           {"filter": "pack_commons"},
           {"filter": "link_manifests"},
-          {"filter": "texture_list"},
-          {"filter": "molang_insert"},
+          // {"filter": "texture_list"},
+          // {"filter": "molang_insert"},
           {"filter": "esbuild_executor", "settings": {
             "removeGlob": "**/scripts/ts/**",
             "buildOptions":{
               "external"   : ["@minecraft/server", "@minecraft/server-ui"],
               "entryPoints": ["BP/scripts/ts/src/index.ts"],
               "outfile"    : "BP/scripts/index.js",
-              "target"     : "es2021",
+              "target"     : "es6",
               "format"     : "esm",
               "bundle"     : true,
-              "minify"     : true
+              "minify"     : false
             }
-          }},
-          {
-            "filter": "name_ninja", "settings": {
-              "languages" : ["en_US.lang"], "overwrite": false, "sort": false,
-              "entities"  : {"auto_name": true, "prefix":"§g", "postfix":"§r"},
-              "blocks"    : {"auto_name": true, "prefix":"§g", "postfix":"§r"},
-              "items"     : {"auto_name": true, "prefix":"§g", "postfix":"§r"},
-              "spawn_eggs": {"auto_name": true, "prefix":"§g", "postfix":"§r"}
           }}
+          // {
+          //   "filter": "name_ninja", "settings": {
+          //     "languages" : ["en_US.lang"], "overwrite": false, "sort": false,
+          //     "entities"  : {"auto_name": true, "prefix":"§g", "postfix":"§r"},
+          //     "blocks"    : {"auto_name": true, "prefix":"§g", "postfix":"§r"},
+          //     "items"     : {"auto_name": true, "prefix":"§g", "postfix":"§r"},
+          //     "spawn_eggs": {"auto_name": true, "prefix":"§g", "postfix":"§r"}
+          // }}
         ]
 			},
 			"build": {
