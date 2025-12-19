@@ -1,0 +1,23 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+
+    "controller.render.xmas_above.wish_block": {
+      "geometry" : "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures" : [ "Texture.default" ],
+      "ignore_lighting": true,
+      "part_visibility": [
+        { "*": false },
+        { "top"   : "q.property('xmas_above:top_face_visible')"   },
+        { "bottom": "q.property('xmas_above:bottom_face_visible')"},
+        { "north" : "q.property('xmas_above:north_face_visible')" },
+        { "south" : "q.property('xmas_above:south_face_visible')" },
+        { "east"  : "q.property('xmas_above:east_face_visible')"  },
+        { "west"  : "q.property('xmas_above:west_face_visible')"  }
+      ],
+      "uv_anim": { "offset": [0, "math.mod(math.floor(q.time_stamp / 4), 4) / 4"], "scale": [1, "1 / 4"] }
+    }
+
+  }
+}

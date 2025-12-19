@@ -1,0 +1,19 @@
+{
+    "materials": {
+        "version": "1.0.0",
+        "spectral:entity_emissive_alpha_one_sided": {
+            "+states": [
+              "DisableDepthTest"
+            ],
+            "-states": [
+              "DisableCulling"
+            ],
+            "-defines": [
+              "FANCY"
+            ]
+        },
+        "wish_animated:spectral": {
+            "+defines": ["USE_UV_ANIM"]
+        }
+    }
+}

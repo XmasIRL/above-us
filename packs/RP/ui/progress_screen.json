@@ -1,0 +1,30 @@
+{
+  "namespace": "progress",
+
+
+  "progress_screen": {
+    "visible": false
+  },
+
+  "world_loading_screen_background": {
+    "visible": false
+  },
+
+  "overworld_loading_background": {
+    "visible": false
+  },
+
+  "nether_loading_background": {
+    "visible": false
+  },
+
+  "theend_loading_background": {
+    "visible": false
+  }
+
+  // "progress_panel": {
+  //   "visible": false
+  // }
+
+}
+

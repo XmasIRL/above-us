@@ -1,0 +1,15 @@
+{
+   "entity_sounds" : {
+      "entities" : {
+         "xmas_above:player_flight" : {
+            "events" : {
+               "step" : "",
+               "land" : "",
+               "jump" : "",
+               "hurt" : ""
+            },
+            "volume" : 0
+         }
+      }
+   }
+}

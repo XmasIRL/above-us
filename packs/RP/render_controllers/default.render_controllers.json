@@ -1,0 +1,28 @@
+{
+
+  "format_version": "1.8.0",
+  "render_controllers": {
+
+    "controller.render.default": {
+      "geometry" : "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures" : [ "Texture.default" ]
+    },
+
+    "controller.render.default_ignore_lighting": {
+      "geometry" : "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures" : [ "Texture.default" ],
+      "ignore_lighting": true
+    },
+
+    "controller.render.default_animated_ignore_lighting": {
+      "geometry" : "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures" : [ "Texture.default" ],
+      "ignore_lighting": true,
+      "uv_anim": { "offset": [0, "math.mod(math.floor(q.time_stamp / 4), 4) / 4"], "scale": [1, "1 / 4"] }
+    }
+
+  }
+}

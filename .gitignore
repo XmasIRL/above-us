@@ -11,3 +11,4 @@
 /.regolith
 .vscode/**
 *.env
+.favorites.json

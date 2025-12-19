@@ -6,17 +6,16 @@
   //   "betaAPIs"               : true,
   //   "upcomingCreatorFeatures": true
   // },
-	"namespace": "x",
-  "worlds": [
-  ],
+	"namespace": "xmas_above",
+  "worlds": [],
 	"packs": {
 		"behaviorPack": "./packs/BP",
 		"resourcePack": "./packs/RP"
 	},
 	"packDefinitions": {
-		"families"            : {"include":["x:*"]},
-		"tags"                : {"include":["x.*"]},
-		"scoreboardObjectives": {"include":["x.*"]}
+		"families"            : {"include":["xmas_above:*"]},
+		"tags"                : {"include":["xmas_above.*"]},
+		"scoreboardObjectives": {"include":["xm*"]}
 	},
 	"regolith": {
 		"dataPath": "./packs/data",
@@ -33,7 +32,11 @@
 		"formatVersion": "1.4.0",
 		"profiles": {
 			"default": {
-				"export" : { "build": "standard", "readOnly": false, "target": "development" },
+				"export" : {
+          "build": "standard", "readOnly": false, "target": "exact",
+          "bpPath": "%APPDATA%/Minecraft Bedrock/Users/Shared/games/com.mojang/development_behavior_packs/above_us_bp",
+          "rpPath": "%APPDATA%/Minecraft Bedrock/Users/Shared/games/com.mojang/development_resource_packs/above_us_rp"
+        },
 				"filters": [
           {"filter": "pack_commons"},
           {"filter": "link_manifests"},
@@ -42,9 +45,10 @@
           {"filter": "esbuild_executor", "settings": {
             "removeGlob": "**/scripts/ts/**",
             "buildOptions":{
-              "external"   : ["@minecraft/server", "@minecraft/server-ui"],
+              "external"   : ["@minecraft/server", "@minecraft/server-ui", "@minecraft/server-gametest"],
               "entryPoints": ["BP/scripts/ts/src/index.ts"],
               "outfile"    : "BP/scripts/index.js",
+              "sourcemap"  : true,
               "target"     : "es6",
               "format"     : "esm",
               "bundle"     : true,

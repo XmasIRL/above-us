@@ -1,0 +1,50 @@
+{
+  "format_version": "1.21.100",
+  "minecraft:entity": {
+
+    "description": {
+      "identifier": "xmas_above:player_flight",
+      "is_spawnable": false,
+      "is_summonable": true
+    },
+
+    "component_groups": {
+      "despawn": { "minecraft:instant_despawn": {} }
+    },
+
+    "components": {
+
+      "minecraft:type_family"                        : { "family": [ "xmas_above:system" ] },
+      "minecraft:breathable"                         : { "breathes_solids": true, "breathes_water": true, "breathes_lava": true },
+      "minecraft:health"                             : { "value": 1, "max": 1, "min": 1  },
+      "minecraft:damage_sensor"                      : { "triggers": [ { "deals_damage": "no" } ] },
+      "minecraft:physics"                            : { "has_gravity": false, "has_collision": false },
+      "minecraft:collision_box"                      : { "width": 0, "height": 0 },
+      "minecraft:custom_hit_test"                    : { "hitboxes": [ { "width": 0, "height": 0, "pivot": [ 0, 1000, 0 ] } ] },
+      "minecraft:pushable"                           : { "is_pushable": false, "is_pushable_by_piston": false },
+      "minecraft:knockback_resistance"               : { "value": 1.0 },
+      // "minecraft:friction_modifier"                  : { "value": 0.4 },
+      // "minecraft:conditional_bandwidth_optimization" : {},
+      "minecraft:movement"                           : { "value": 0.1 },
+      "minecraft:flying_speed"                       : { "value": 0.1 },
+      "minecraft:input_air_controlled"               : { "strafe_speed_modifier": 1.0, "backwards_movement_modifier": 1.0 },
+
+      "minecraft:rideable": {
+        "seat_count"    : 1,
+        "interact_text" : "Fly",
+        "family_types"  : [ "player" ],
+        "dismount_mode" : "on_top_center",
+        "seats"         : [ { "position": [ 0.0, 0.0, 0.0 ] } ]
+      },
+
+      "minecraft:environment_sensor": { "triggers": [
+        { "event": "despawn", "filters": { "test": "rider_count", "value": 0 } }
+      ] }
+
+    },
+
+    "events": {
+      "despawn": { "add": { "component_groups": [ "despawn" ] } }
+    }
+  }
+}

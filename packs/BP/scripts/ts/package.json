@@ -1,17 +1,19 @@
 {
   "version": "1.0.0",
-  "name": "above_us_scripts",
+  "name": "above",
   "author": "xmas",
-  "license": "Unlicense",
-  "description": "A party game for Minecraft where you play as stars ruling over a village. Features social deduction, combat and puzzle-solving gameplay for two or more players.",
+  "license": "CC0-1.0",
+  "description": "Play Minecraft from above!",
   "keywords": [
     "minecraft",
     "minecraft-bedrock",
     "minecraft-addon"
   ],
   "dependencies": {
-    "@minecraft/server": "*",
-    "@minecraft/server-ui": "*"
+    "@minecraft/math": "^2.2.11",
+    "@minecraft/server": "2.2.0",
+    "@minecraft/server-gametest": "^1.0.0-beta.1.21.113-stable",
+    "@minecraft/server-ui": "2.0.0"
   },
   "devDependencies": {
     "typescript": "^5.7.2"

@@ -1,0 +1,20 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "xmas_above:wish_block_mine",
+      "materials": {
+        "default": "wish_animated"
+      },
+      "textures": {
+        "default": "textures/entity/wish_block_mine/default"
+      },
+      "geometry": {
+        "default": "geometry.wish_block"
+      },
+      "render_controllers": [
+        "controller.render.xmas_above.wish_block"
+      ]
+    }
+  }
+}
