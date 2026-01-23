@@ -12,3 +12,4 @@
 .vscode/**
 *.env
 .favorites.json
+**/Thumbs.db
