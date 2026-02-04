@@ -12,6 +12,17 @@
       "geometry": {
         "default": "geometry.wish_block"
       },
+      "scripts": {
+        "initialize": [
+          "v.fps = 8;",
+          "v.die_face = 0;",
+          "v.life_time_integer = 0;"
+        ],
+        "pre_animation": [
+          "v.if_roll = v.life_time_integer < math.floor(q.life_time * v.fps);",
+          "v.if_roll ? { v.die_face = math.random_integer(0,5); v.life_time_integer = math.floor(q.life_time * v.fps); };"
+        ]
+      },
       "render_controllers": [
         "controller.render.xmas_above.wish_block"
       ]

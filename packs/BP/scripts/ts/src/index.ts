@@ -2,41 +2,11 @@ import { system, world } from "@minecraft/server";
 
 import "commands";
 import "village";
+import "wish";
 
 system.runInterval(() => {
-  world.getAllPlayers().forEach(player => {
-
-  });
+  world.getAllPlayers().forEach((player) => {});
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // system.runInterval(() => {
 
@@ -51,7 +21,6 @@ system.runInterval(() => {
 //     // if ((player.getGameMode() === GameMode.Creative) && !(Vector3Utils.distance(player.getVelocity(),VECTOR3_ZERO) < 0.1)) {
 //     //   player.setGameMode(GameMode.Spectator);
 //     // }
-
 
 //     // const ride = player.getComponent(EntityComponentTypes.Riding)?.entityRidingOn
 
@@ -103,8 +72,6 @@ system.runInterval(() => {
 //   // }
 // })
 
-
-
 // export interface BV_COORDS {
 //   from: { x: number, y: number, z: number },
 //   to:   { x: number, y: number, z: number },
@@ -131,7 +98,6 @@ system.runInterval(() => {
 // export let playBV       = DEFAULT_PLAY_BV;
 // export let playBVLength = DEFAULT_PLAY_BV_LENGTH;
 // export let playBVHeight = DEFAULT_PLAY_BV_HEIGHT;
-
 
 // export let playerEndBVMap = new Map<Player, BlockVolume>();
 
@@ -187,18 +153,6 @@ system.runInterval(() => {
 //     }
 //   });
 // });
-
-
-
-
-
-
-
-
-
-
-
-
 
 // world.afterEvents.entityHitBlock.subscribe(({hitBlock}) => {
 //   if (!hitBlock.dimension.getEntitiesAtBlockLocation(hitBlock.location).some(e => e.typeId === 'xmas_above:wish_block_mine')) {
@@ -261,7 +215,6 @@ system.runInterval(() => {
 
 // });
 
-
 // system.afterEvents.scriptEventReceive.subscribe(event => {
 
 //   const message = JSON.parse(event.message);
@@ -281,24 +234,6 @@ system.runInterval(() => {
 //   });
 // });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // let simulatedPlayer:SimulatedPlayer;
 
 // world.beforeEvents.playerInteractWithBlock.subscribe(({player,isFirstEvent, block, cancel}) => {
@@ -308,14 +243,12 @@ system.runInterval(() => {
 //   }
 // });
 
-
 // let moveLoc = VECTOR3_EAST;
 // register('testClass','testFn',(test) => {
 //   world.getDimension('overworld').getEntities({excludeTypes:["player"]}).forEach(en => {
 //     test.walkTo(en, moveLoc);
 //   });
 // }).structureLocation(VECTOR3_ONE).structureName('testFn:void');
-
 
 // world.afterEvents.playerEmote.subscribe(({player, personaPieceId}) => {
 //   const dimension = player.dimension
@@ -331,10 +264,8 @@ system.runInterval(() => {
 //   system.run(() => world.getDimension('overworld').runCommand('/gametest run testClass:testFn'));
 // });
 
-
 // system.runInterval(() => {
 //   world.getAllPlayers().forEach(player => {
-
 
 //     // if (player.inputInfo.getButtonState(InputButton.Jump) === ButtonState.Pressed) {
 //     //   // player.teleport(Vector3Utils.add(player.location,{x:0, y:0.1, z:0}));
@@ -356,7 +287,6 @@ system.runInterval(() => {
 //     // }
 //   });
 // }, 1);
-
 
 // world.afterEvents.playerButtonInput.subscribe(({player, button, newButtonState}) => {
 
@@ -394,7 +324,6 @@ system.runInterval(() => {
 //       // world.sendMessage(`${player.name} has Jumped? ${player.getDynamicProperty("isSingleJumping")}`);
 
 //       player.setDynamicProperty("isJumping", false);
-
 
 //       // if (holdJumping) system.clearRun(holdJumping);
 
