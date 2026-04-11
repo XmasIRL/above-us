@@ -1,36 +1,46 @@
 {
-	"$schema": "https://raw.githubusercontent.com/Bedrock-OSS/regolith-schemas/main/config/v1.4.json",
-	"author": "xmas",
-	"name": "above_us",
-	// "experimentalGameplay": {
-  //   "betaAPIs"               : true,
-  //   "upcomingCreatorFeatures": true
-  // },
-	"namespace": "xmas_above",
-  "worlds": [],
-	"packs": {
+	"$schema": "https://raw.githubusercontent.com/XmasIRL/regolith-schemas/main/config/project-unified.json",
+  
+  "name": "above_us",
+  "author": "xmas",
+	"authors": [
+    {
+      "name": "Xmas",
+      "logo": "https://avatars.githubusercontent.com/u/117382404?v=4"
+    }
+  ],
+  "namespace": "x",  
+  "type": "minecraftBedrock",
+  "targetVersion": "26.13",
+  "packs": {
 		"behaviorPack": "./packs/BP",
 		"resourcePack": "./packs/RP"
 	},
 	"packDefinitions": {
-		"families"            : {"include":["xmas_above:*"]},
-		"tags"                : {"include":["xmas_above.*"]},
-		"scoreboardObjectives": {"include":["xm*"]}
+		"families"            : {"include":["x:*"]},
+		"tags"                : {"include":["x.*"]},
+		"scoreboardObjectives": {"include":["x*"]}
 	},
+  "worlds": [],
+
 	"regolith": {
+    
+    "formatVersion": "1.7.0",
 		"dataPath": "./packs/data",
+
 		"filterDefinitions": {
-			"exaroton_deploy"  : { "url": "github.com/XmasIRL/regolith-filters-xmas"           , "version": "HEAD" },
+      "exaroton_deploy"  : { "url": "github.com/XmasIRL/regolith-filters-xmas"           , "version": "HEAD" },
 			"name_ninja"       : { "url": "github.com/XmasIRL/regolith-filters"                , "version": "HEAD" },
 			"texture_list"     : { "url": "github.com/XmasIRL/regolith-filters"                , "version": "HEAD" },
 			"link_manifests"   : { "url": "github.com/XmasIRL/regolith-filters-hatchibombotar" , "version": "HEAD" },
 			"pack_commons"     : { "url": "github.com/XmasIRL/regolith-filters-hatchibombotar" , "version": "HEAD" },
-			"molang_insert"    : { "url": "github.com/XmasIRL/regolith-filters-hatchibombotar" , "version": "HEAD" },
+			"molang_insert"    : { "url": "github.com/XmasIRL/regolith-filters-hatchibombotar" , "version": "HEAD" },			
 			"package"          : { "url": "github.com/XmasIRL/regolith-filters-hatchibombotar" , "version": "HEAD" },
 			"esbuild_executor" : { "url": "github.com/XmasIRL/regolith-filters-majestikbutter" , "version": "HEAD" }
 		},
-		"formatVersion": "1.4.0",
+
 		"profiles": {
+      
 			"default": {
 				"export" : {
           "build": "standard", "readOnly": false, "target": "exact",
@@ -39,46 +49,48 @@
         },
 				"filters": [
           {"filter": "pack_commons"},
-          {"filter": "link_manifests"},
-          // {"filter": "texture_list"},
-          // {"filter": "molang_insert"},
-          {"filter": "esbuild_executor", "settings": {
-            "removeGlob": "**/scripts/ts/**",
-            "buildOptions":{
-              "external"   : ["@minecraft/server", "@minecraft/server-ui", "@minecraft/server-gametest"],
-              "entryPoints": ["BP/scripts/ts/src/index.ts"],
-              "outfile"    : "BP/scripts/index.js",
-              "sourcemap"  : true,
-              "target"     : "es6",
-              "format"     : "esm",
-              "bundle"     : true,
-              "minify"     : false
-            }
-          }}
-          // {
-          //   "filter": "name_ninja", "settings": {
-          //     "languages" : ["en_US.lang"], "overwrite": false, "sort": false,
-          //     "entities"  : {"auto_name": true, "prefix":"§g", "postfix":"§r"},
-          //     "blocks"    : {"auto_name": true, "prefix":"§g", "postfix":"§r"},
-          //     "items"     : {"auto_name": true, "prefix":"§g", "postfix":"§r"},
-          //     "spawn_eggs": {"auto_name": true, "prefix":"§g", "postfix":"§r"}
-          // }}
+          {
+            "asyncFilters": [
+              {"filter": "link_manifests"},
+              {"filter": "texture_list"},
+              {"filter": "molang_insert"},
+              {"filter": "esbuild_executor", "settings": {
+                "removeGlob": "**/scripts/ts/**",
+                "buildOptions":{
+                  "external"   : ["@minecraft/server", "@minecraft/server-ui", "@minecraft/server-gametest"],
+                  "entryPoints": ["BP/scripts/ts/src/index.ts"],
+                  "outfile"    : "BP/scripts/index.js",
+                  "sourcemap"  : true,
+                  "target"     : "es6",
+                  "format"     : "esm",
+                  "bundle"     : true,
+                  "minify"     : false
+                }
+              }}
+            ]
+          }
         ]
 			},
+      
 			"build": {
 				"export" : { "build": "standard", "readOnly": false, "target": "local" },
 				"filters": [
           {"profile": "default"},
-          {"filter": "package", "settings":{
-            "package_location": "./build/package/packs",
-            "package": { "mcpack": {} }
-          }},
-          {"filter": "package", "settings":{
-            "package_location": "./build/package/addon",
-            "package": { "mcaddon":{} }
-          }}
+          {
+            "asyncFilters": [
+              {"filter": "package", "settings":{
+                "package_location": "./build/package/packs",
+                "package": { "mcpack": {} }
+              }},
+              {"filter": "package", "settings":{
+                "package_location": "./build/package/addon",
+                "package": { "mcaddon":{} }
+              }}
+            ]
+          }
         ]
 			},
+
 			"deploy": {
 				"export" : { "build": "standard", "readOnly": false, "target": "local" },
 				"filters": [

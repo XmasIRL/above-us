@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
-  "name": "above",
+  "name": "above_us",
   "author": "xmas",
-  "license": "CC0-1.0",
+  "license": "MIT",
   "description": "Play Minecraft from above!",
   "keywords": [
     "minecraft",
