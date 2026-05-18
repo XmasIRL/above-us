@@ -4,27 +4,15 @@
     "name": "pack.name",
     "description": "pack.description",
     "uuid": "887529ff-eac3-4986-9aea-4112d251b03f",
-    "version": [
-      1,
-      0,
-      0
-    ],
-    "min_engine_version": [
-      26,
-      13,
-      0
-    ]
+    "version": [ 1, 0, 0 ],
+    "min_engine_version": [ 1, 24, 0 ]
   },
   "modules": [
     {
       "description": "BP Module",
       "type": "data",
       "uuid": "b43298cc-c99b-48bc-ad78-5541b63510e1",
-      "version": [
-        1,
-        0,
-        0
-      ]
+      "version": [ 1, 0, 0 ]
     },
     {
       "description": "Scripts Module",
@@ -32,17 +20,13 @@
       "language": "javascript",
       "entry": "scripts/index.js",
       "uuid": "74a5bdef-404f-415a-a7ad-8d9a9b3bd597",
-      "version": [
-        1,
-        0,
-        0
-      ]
+      "version": [ 1, 0, 0 ]
     }
   ],
   "dependencies": [
     {
       "module_name": "@minecraft/server",
-      "version": "2.2.0"
+      "version": "2.7.0"
     },
     {
       "module_name": "@minecraft/server-ui",
@@ -54,11 +38,7 @@
     },
     {
       "uuid": "72f6c204-57b6-4736-bbb4-9fed0960854e",
-      "version": [
-        1,
-        0,
-        0
-      ]
+      "version": [ 1, 0, 0 ]
     }
   ]
 }
