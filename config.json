@@ -54,6 +54,14 @@
               {"filter": "link_manifests"},
               {"filter": "texture_list"},
               {"filter": "molang_insert"},
+              {
+                "filter": "name_ninja", "settings": {
+                  "languages" : ["en_US.lang"], "overwrite": false, "sort": false,
+                  "entities"  : {"auto_name": true, "prefix":"§e", "postfix":"§r"},
+                  "blocks"    : {"auto_name": true, "prefix":"§e", "postfix":"§r"},
+                  "items"     : {"auto_name": true, "prefix":"§e", "postfix":"§r"},
+                  "spawn_eggs": {"auto_name": true, "prefix":"§e", "postfix":"§r"}
+              }},
               {"filter": "esbuild_executor", "settings": {
                 "removeGlob": "**/scripts/ts/**",
                 "buildOptions":{
