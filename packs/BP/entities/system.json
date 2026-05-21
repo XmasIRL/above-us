@@ -1,0 +1,26 @@
+{
+    
+  "format_version": "1.26.0",
+
+  "minecraft:entity": {
+  
+    "description": {
+      "identifier": "x:system",
+      "is_spawnable": false,
+      "is_summonable": false
+    },
+
+    "component_groups": {
+      "x:despawn": { "minecraft:instant_despawn": {} }
+    },
+
+    "components": {
+      
+      
+    },
+
+    "events": {
+      "x:despawn": { "add": { "component_groups": [ "x:despawn" ] } }
+    }
+  }
+}

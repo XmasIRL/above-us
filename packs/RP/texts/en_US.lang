@@ -1,3 +1,5 @@
 
 pack.name=Above Us
 pack.description=Play Minecraft from Above!
+item.spawn_egg.entity.x:villager_v2.name=§eVillager§r	##
+entity.x:villager_v2.name=§eVillager§r	##
