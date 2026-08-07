@@ -6,9 +6,17 @@
 
     "component_groups": {
 
-      "x:inspired":{
+      "x:wishing":{
+        // "minecraft:spawn_entity": { "entities": [ { "single_use": true, "spawn_entity": "x:wish", "spawn_sound": "beacon.activate", "min_wait_time": 0, "max_wait_time": 0, "num_to_spawn": 1 } ] },
         "minecraft:behavior.follow_mob": { "priority": 0, "speed_multiplier": 0.6, "search_range": 100, "stop_distance": 2, "use_home_position_restriction": true,
-          "filters": [ {"test": "is_family", "subject": "other", "value": "x:wish" } ] 
+          "filters": [ 
+            {
+              "all_of": [
+                {"test": "is_family", "subject": "other", "value": "x:wish" },            
+                {"test": "has_same_equipment_in_slot_as", "subject": "other", "value": true, "domain": "head" }
+              ]
+            }
+          ] 
         }        
         // "minecraft:behavior.follow_parent": { "priority": 0, "speed_multiplier": 1.2 }
       },
@@ -711,8 +719,8 @@
 
       /// WISH
       
-      "x:become_inspired"   : { "add"   : { "component_groups": ["x:inspired"] } },
-      "x:become_uninspired" : { "remove": { "component_groups": ["x:inspired"] } },
+      "x:start_wishing" : { "add"    : { "component_groups": ["x:wishing"] } },
+      "x:stop_wishing"  : { "remove" : { "component_groups": ["x:wishing"] } },
 
 
       /// MISC
