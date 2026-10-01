@@ -10,12 +10,12 @@
     "minecraft-addon"
   ],
   "devDependencies": {
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.2"
   },
   "dependencies": {
     "@minecraft/math": "^2.4.0",
-    "@minecraft/server": "^2.7.0",
-    "@minecraft/server-ui": "^2.0.0",
-    "@minecraft/vanilla-data": "^1.26.21"
+    "@minecraft/server": "^2.10.0",
+    "@minecraft/server-ui": "^2.2.0",
+    "@minecraft/vanilla-data": "^1.26.52"
   }
 }

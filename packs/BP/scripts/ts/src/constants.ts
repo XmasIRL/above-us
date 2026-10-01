@@ -21,25 +21,3 @@ export const PARTICLE = {
     BASIC_SMOKE             : "minecraft:basic_smoke_particle",
     CAMPFIRE_SMOKE          : "minecraft:campfire_smoke_particle"    
 } as const;
-
-export const ENTITY = {
-    TYPE : { VILLAGER: 'x:villager_v2' },
-    EVENT: { DESPAWN: "x:despawn" }
-} as const;
-
-export const PLAYER = {
-    RUNS: { SPEAR_USE: "spearUse" }
-} as const;
-
-export const WISH = {
-  ENTITY_TYPE   : 'x:wish',
-  WISH_TYPE     : {
-    GENERIC      : "generic",
-    MOVE_TO      : "move_to"
-  },
-  PROPERTY      : {
-    WISH_TYPE    : "x:wish_type"  ,
-    WISH_PLAYER  : "x:wish_player",
-    WISH_PATH    : "x:wish_path" 
-  }
-} as const
