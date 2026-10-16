@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "animations": {
+		
+		"animation.default" : {
+			"bones" : { "root" : {} }
+		},
+
+    "animation.hide": {
+      "loop": "hold_on_last_frame",
+      "animation_length": 0.2,
+      "bones": {
+				"head" : { "scale" : 0 },
+				"root" : { "scale" : 0 }
+      }
+    },
+		
+		"animation.rotate" : {
+			"loop" : true,
+			"override_previous_animation": true,
+      "animation_length": 0.2,
+			"blend_weight": "(1.0)",
+			"bones" : {
+				"head" : {
+					// "relative_to": {"rotation": "entity"},
+					"rotation": [ "(v.rotate_head_x ?? 0)", "(v.rotate_head_y ?? 0)", "(v.rotate_head_z ?? 0)" ]
+				},
+				"body" : {
+					// "relative_to": {"rotation": "entity"},
+					"rotation" : [ "(v.rotate_body_x ?? 0)", "(v.rotate_body_y ?? 0)", "(v.rotate_body_z ?? 0)" ]
+				}
+			}
+		}
+  }
+}
