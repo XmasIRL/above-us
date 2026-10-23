@@ -1,5 +1,4 @@
 import * as mc from "@minecraft/server";
-import * as control from "control";
 import { run } from "utils";
 import { setupWorld } from "world";
 
@@ -31,7 +30,6 @@ export function subscribeToEvents() {
   })
 
   mc.world.beforeEvents.playerInteractWithEntity.subscribe(event => {
-    event = control.onInteractEntity(event);
   })
 
   mc.world.beforeEvents.playerInteractWithBlock.subscribe(event => {
@@ -47,6 +45,5 @@ export function subscribeToEvents() {
   })
 
   mc.world.afterEvents.playerButtonInput.subscribe(event => {
-    control.onJump(event);
   })
 }
