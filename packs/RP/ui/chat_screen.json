@@ -1,0 +1,6 @@
+{
+  "namespace": "chat",
+  "chat_screen@common.base_screen": {
+    "close_on_player_hurt": false
+  }
+}
